@@ -1,0 +1,8 @@
+
+# this select a column in dataset
+SELECT name FROM people
+
+# this print the string 'something'
+SELECT 'something'
+AS RESULT;
+
