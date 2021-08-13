@@ -65,6 +65,27 @@ SELECT name FROM people WHERE deathdate IS NULL;
 # LIKE and NOT LIKE, With % or _
 SELECT name FROM people WHERE name LIKE 'B%';
 
+*********************Aggregate Functions**********************
+**************************************************************
+
+# Aggregate functions like AVG(), SUM(), MAX(), MIN()
+SELECT AVG(budget) FROM films;
+
+# Aggregate functions with WHERE filtering
+SELECT SUM(budget) FROM films WHERE release_year >= 2010;
+
+# Basic arithmatic, notice decimal results
+# Returns 1 since 4 and 3 are integers
+SELECT (4/3) 
+
+# Returns decimal places
+SELECT (4.0/3.0) AS RESULT;
+
+# Aliasing
+SELECT MAX(budget) AS max_budget,MAX(duration) AS max_duration FROM films;
+
+
+
 
 
 
