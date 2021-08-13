@@ -59,6 +59,17 @@ AND nationality = 'USA';
 # WHERE IN 
 SELECT name FROM kids WHERE age IN (2,4,6,8,10);
 
+# IS NULL
+SELECT name FROM people WHERE deathdate IS NULL;
+
+# LIKE and NOT LIKE, With % or _
+SELECT name FROM people WHERE name LIKE 'B%';
+
+
+
+
+
+
 
  
 
