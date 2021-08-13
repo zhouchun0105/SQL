@@ -1,0 +1,68 @@
+
+******************Selecting Columns*****************
+****************************************************
+
+# this select a column in dataset
+SELECT name FROM people;
+
+# this print the string 'something'
+SELECT 'something'
+AS RESULT;
+
+# select two columns at a time
+SELECT name, birthday FROM people;
+
+# select all with *
+SELECT * FROM people;
+
+# limit the number
+SELECT * FROM people LIMIT 10;
+
+# select distinct and ignore duplicates
+SELECT DISTINCT language FROM films;
+
+# count the number of rows
+SELECT COUNT(*) FROM people;
+
+# count the non-missing values
+SELECT COUNT(birthdate) FROM people
+
+# count the distinct
+SELECT COUNT(DISTINCT birthdate) FROM people
+
+
+
+********************Filtering Rows************************
+**********************************************************
+
+# <> means not equal
+ 
+# filtering text results with WHERE (WHERE always comes after FROM)
+SELECT title FROM films WHERE title = 'Metropolis' ;
+
+# filtering numerical results with WHERE
+SELECT title, release_year FROM films WHERE release_year > 2000
+
+# Use WHERE AND
+SELECT title FROM films WHERE release_year > 1994 AND release_year < 2000
+
+# Use WHERE OR
+SELECT title FROM films 
+WHERE (release_year = 1994 or release_year = 1995) 
+AND (certification = 'PG' or certification = 'R');
+
+# BETWEEN is inclusive and is for 
+# numercal and text values in specific range
+SELECT name FROM kids WHERE age BETWEEN 2 AND 12
+AND nationality = 'USA';
+
+# WHERE IN 
+SELECT name FROM kids WHERE age IN (2,4,6,8,10);
+
+
+ 
+
+
+
+
+
