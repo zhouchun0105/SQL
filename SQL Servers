@@ -1,10 +1,53 @@
 
 
+*******************SELECTion BOX***********************
+*******************************************************
 
 
 
-********Groups, Strings and Counting Things***********
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+**********************Strings*************************
 ******************************************************
+
+# LEN()
+SELECT LEN(description) AS description_length FROM grid;
+
+# LEFT(attribute, value) returns first value number of string
+SELECT LEFT(description, 25) AS first_25_left FROM grid;
+
+# Same for RIGHT()
+
+# CHARINDEX searches for a substring in string and returns the position
+# CHARINDEX(substring, string, start)
+SELECT description, CHARINDEX('Weather', Description) FROM grid WHERE description LIKE '%Weather%'
+
+# SUBSTRING(string, start, length)
+SELECT TOP (10) description, 
+CHARINDEX('Weather', description) AS start_of_string, LEN ('Weather') AS length_of_string, 
+SUBSTRING(description, 15, LEN(description)) AS additional_description 
+FROM grid
+WHERE description LIKE '%Weather%';
+
+
+
+
+
+************************************Joining Tables*****************************
+*******************************************************************************
+
 
 
 
