@@ -3,20 +3,11 @@
 *******************SELECTion BOX***********************
 *******************************************************
 
+# SELECT TOP() similar with LIMIT
+SELECT TOP (number) column_name(s) FROM column_name(s);
+SELECT TOP (number) PERCENT column_name(s) FROM column_name(s);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+# Dates are always in 'YYYY-MM-DD' format in default Microsoft SQL Server
 
 
 
