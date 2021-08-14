@@ -32,6 +32,7 @@ SELECT COUNT(DISTINCT birthdate) FROM people
 
 
 
+
 ********************Filtering Rows************************
 **********************************************************
 
@@ -65,6 +66,8 @@ SELECT name FROM people WHERE deathdate IS NULL;
 # LIKE and NOT LIKE, With % or _
 SELECT name FROM people WHERE name LIKE 'B%';
 
+
+
 *********************Aggregate Functions**********************
 **************************************************************
 
@@ -85,6 +88,8 @@ SELECT (4.0/3.0) AS RESULT;
 SELECT MAX(budget) AS max_budget,MAX(duration) AS max_duration FROM films;
 
 
+
+
 **************************Sorting and Grouping*******************************
 *****************************************************************************
 
@@ -94,6 +99,25 @@ SELECT title FROM films ORDER BY release_year DESC;
 # Sort by multiple columns 
 SELECT birthday, name FROM people ORDER BY birthdate, name;
 
+# GROUP BY with COUNT() or MAX()
+# GROUP BY always comes after FROM
+# ORDER BY always comes after GROUP BY
+
+SELECT release_year, COUNT(*) FROM films GROUP BY release_year;
+SELECT country, release_year, MIN(gross) FROM films GROUP BY release_year, country ORDER BY country, release_year;
+
+# One should not use WHERE with Aggregate Functions, use HAVING instead
+
+# Task
+# Now you're going to write a query that returns the average budget and average gross earnings for films in each year after 1990, 
+# if the average budget is greater than $60 million. Finally, modify your query to order the results from highest average gross earnings to lowest.
+
+SELECT release_year, AVG(budget) AS avg_budget, AVG(gross) AS avg_gross
+FROM films
+WHERE release_year > 1990
+GROUP BY release_year
+HAVING AVG(budget) > 60000000
+ORDER BY AVG(gross) DESC;
 
 
 
@@ -102,7 +126,6 @@ SELECT birthday, name FROM people ORDER BY birthdate, name;
 
 
 
- 
 
 
 
