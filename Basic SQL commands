@@ -84,6 +84,10 @@ SELECT (4.0/3.0) AS RESULT;
 # Aliasing
 SELECT MAX(budget) AS max_budget,MAX(duration) AS max_duration FROM films;
 
+
+**************************Sorting and Grouping*******************************
+*****************************************************************************
+
 # ORDER BY, pressume ascending 
 SELECT title FROM films ORDER BY release_year DESC;
 
