@@ -38,12 +38,21 @@ EXCEPT
 SELECT capital FROM countries
 ORDER BY name;
 
+# Subquery
+SELECT DISTINCT name FROM languages
+WHERE code IN
+(SELECT code FROM countries
+WHERE region = 'Middle East')
+ORDER BY name;
+
+# INNER JOIN (not familiar with)
+SELECT c1.code, name, basic_unit AS currency
+FROM countries AS c1
+INNER JOIN currencies AS c2
+ON c1.code = c2.code
+WHERE c1.continent = 'Oceania';
+
 # Semi-join select records from first table where conditions met in the second table
-
-
-
-
-
 # Anti-join select records from first table where conditions not met in the second table
 
 
